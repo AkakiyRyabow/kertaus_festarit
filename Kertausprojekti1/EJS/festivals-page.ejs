@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festivaalit</title>
+    <link rel="stylesheet" type="text/css" href="/css/header-part-styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/main-page-styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/page-common-styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer-part-styles.css">
+    <script src='https://kit.fontawesome.com/4a30715f09.js' crossorigin='anonymous'></script>
+</head>
+<%- include("ejs-parts/header-part"); %>
+    <main>
+        <div class="main-content">
+            <h1 class="h1-top-desc">Festarit</h1>
+            <div class="top-categories">
+                <% 
+                if(festarit)
+                    for (festival of festarit) { 
+                        {%>
+                        <div id="<%= festival.name %>" class="category-big-div" onclick="location.href=`/search/<%= festival.id %>`;">
+                            <div class="category-text">
+                                <h1><%= festival.name %></h1>
+                            </div> 
+                            <div class="category-date">
+                                <p><%= festival.date_string %></p>
+                                <p><%= festival.city_name %></p>
+                            </div> 
+                            <div class="category-big-div-data">
+                                <div class="artists">
+                                    <p>Artistien määrä:  <%= festival.quantity %></p>
+                                 <%
+                                for (artist of festival.artists) { %>
+                                    <p><%= artist %></p>
+                                    <%} %></div>
+                            </div>                              
+                        </div>
+                        <%} %>
+                <%} %>
+        </div>
+    </main>
+<script  src="/js/get-data.js"></script>
+<%- include("ejs-parts/footer-part"); %>

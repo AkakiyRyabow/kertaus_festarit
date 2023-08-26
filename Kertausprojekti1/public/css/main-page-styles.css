@@ -1,0 +1,125 @@
+main {
+    height: fit-content;
+    background-size: 150px;
+    background-image: url("/brand/backgroundo5.png");
+}
+
+.page-main-div {
+    width: 100%;
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto; /*height*/
+    grid-template-areas:
+      "tag-bar categories"
+}
+
+.mainTop { 
+    height: 15px;
+    grid-area: main-top;
+}
+
+.mainBottom {
+    grid-area: main-footer;
+}
+
+/****************TOP CATEGORY DIVS ****************/
+
+.main-content {
+    margin-bottom: 50px;
+    width: 100%;
+    grid-area: categories;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top-categories {
+    max-width: 85%;
+    padding: 10px;
+    height: fit-content;  
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-big-div {
+    min-width: 320px;
+    width: 30%;
+    max-width: 380px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: rgba(28, 28, 28, 0.995);
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.551);
+}
+
+.category-div:hover {
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.551);
+}
+
+.category-div:active {
+    box-shadow: 0px 5px 10px 3px #df090942;
+}
+
+/************************************************/
+
+.category-big-div-data{
+    height: 250px;
+    width: 100%;
+    border-radius: 20px;
+    object-fit:cover;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.description {
+    height: fit-content;
+    max-height: 150px;
+    width: 100%;
+}
+
+.other-data {
+    margin-top: 15px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-text {
+    display: flex;
+    justify-content: center;
+}
+
+.category-date {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    border-bottom: solid 2px white;
+}
+
+.h1-top-desc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*********** OTHER ********'*/
+@media only screen and (max-width: 1000px) {
+    .top-categories {
+        min-width: 95%;
+    }
+    .category-big-div {
+        min-width: 320px;
+        max-width: 380px;
+    }
+    .category-div .image {
+        height: 230px;
+    }
+
+}

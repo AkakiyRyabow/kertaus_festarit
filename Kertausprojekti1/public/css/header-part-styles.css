@@ -1,0 +1,66 @@
+header {
+    height: 100px;
+    background-color: #141414;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.551);
+    border-radius: 0 0 20px 20px;
+}
+
+.headerLeftDiv {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerLogo{
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.headerLogo span{
+    font-size: 50px;
+    color: red;
+}
+
+.headerCenterDiv {
+    min-width: 250px;
+    width: 30%;
+    max-width: 550px;
+    height: 55px;
+}
+
+.headerRightDiv {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-decoration: underline;
+}
+
+.headerRightDiv a:hover {
+    color: red;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .headerRightDiv {
+        width: 0px;
+    }
+
+    .headerCenterDiv {
+        width: 60%;
+    }
+}
